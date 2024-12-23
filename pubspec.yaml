@@ -1,0 +1,24 @@
+name: code_formatter_package
+description: "A Flutter package for formatting and splitting Dart code into widgets."
+version: 0.0.1
+homepage: https://github.com/Mrkhan012/code_formatter_package
+
+environment:
+  sdk: '>=3.4.4 <4.0.0'
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  # Define assets or fonts here if needed in the future
+
+example:
+  # Path to the example Dart file that demonstrates how to use your package
+  example: example/example.dart
