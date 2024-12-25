@@ -27,9 +27,9 @@ void main() {
   test('formats large code into multiple widgets', () {
     CodeFormatter.formatCode(largeCode);
 
-    // Verify files are created
+    // Verify files are created in the correct directory
     for (int i = 1; i <= 2; i++) {
-      final file = File('widget_$i.dart');
+      final file = File('lib/generated_widgets/widget_$i.dart');
       expect(file.existsSync(), true, reason: 'File widget_$i.dart was not created');
     }
   });
@@ -37,7 +37,7 @@ void main() {
   // Cleanup after tests
   tearDown(() {
     for (int i = 1; i <= 2; i++) {
-      final file = File('widget_$i.dart');
+      final file = File('lib/generated_widgets/widget_$i.dart');
       if (file.existsSync()) {
         file.deleteSync();
       }
