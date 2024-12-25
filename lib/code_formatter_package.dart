@@ -76,8 +76,13 @@ class CodeFormatter {
     String outputDir = 'lib/generated_widgets',
   }) {
     try {
+      // Handle relative file paths
+      final fullFilePath = path.isAbsolute(filePath)
+          ? filePath
+          : path.join(Directory.current.path, filePath);
+
       // Read the file content
-      final code = File(filePath).readAsStringSync();
+      final code = File(fullFilePath).readAsStringSync();
 
       // Format the code
       formatCode(code, customNames: customNames, outputDir: outputDir);

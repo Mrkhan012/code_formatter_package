@@ -1,6 +1,6 @@
 name: code_formatter_package
 description: "A Flutter package for formatting and splitting Dart code into widgets."
-version: 0.0.5
+version: 0.0.7
 homepage: https://github.com/Mrkhan012/code_formatter_package
 
 environment:

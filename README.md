@@ -1,98 +1,19 @@
-Code Formatter Package
 
-A Flutter package for formatting and splitting large Dart code into smaller widget files. This package is especially useful for organizing long widget-based code into manageable parts.
+Here’s a suggested release note for version 0.0.5 of your package:
 
-Features
+Version 0.0.6 - Improvements and Bug Fixes
+Improved Features:
 
-Automatically splits long Dart code into multiple widgets.
+Automatic Code Formatting: Improved the automatic Dart code formatting functionality to handle more complex widget structures and edge cases.
+Enhanced Custom Widget Naming: Added better handling for custom widget names, ensuring more accurate and consistent output.
+Improved File Output Handling: The output files are now saved in a more organized structure within the generated_widgets directory.
+Bug Fixes:
 
-Saves each widget in a separate file.
+Fixed Path Issues: Resolved issues with relative paths for Dart files to ensure proper formatting and file saving.
+Stability Improvements: Addressed some minor bugs related to formatting large files, improving stability during formatting operations.
+New Features:
 
-Allows users to specify custom names for the generated widget files.
+Example Integration: Included an example file (example/example.dart) demonstrating how to use the package for automatic code formatting. This example can be run directly for testing and integration purposes.
+Compatibility:
 
-Installation
-
-Add the following line to your pubspec.yaml file:
-
-dependencies:
-  code_formatter_package:
-    git:
-      url: https://github.com/Mrkhan012/code_formatter_package
-
-Then run:
-
-flutter pub get
-
-Usage
-
-Import the Package
-
-import 'package:code_formatter_package/code_formatter_package.dart';
-
-Format Code
-
-Use the CodeFormatter.formatCode method to split your code into multiple widgets:
-
-import 'dart:io';
-import 'package:code_formatter_package/code_formatter_package.dart';
-
-void main() {
-  String largeCode = File('large_code.dart').readAsStringSync();
-  CodeFormatter.formatCode(largeCode);
-}
-
-Format Code with Custom Widget Names
-
-You can specify custom names for the widgets:
-
-void main() {
-  String largeCode = File('large_code.dart').readAsStringSync();
-  CodeFormatter.formatCodeWithCustomNames(
-    largeCode,
-    ['HomeWidget', 'ProfileWidget', 'SettingsWidget'],
-  );
-}
-
-Example
-
-Given a large Dart file large_code.dart containing:
-
-class HomeWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
-class ProfileWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
-Running the formatter will generate separate files:
-
-widget_1.dart
-
-widget_2.dart
-
-or with custom names:
-
-HomeWidget.dart
-
-ProfileWidget.dart
-
-Running Tests
-
-The package includes unit tests to verify functionality. Run tests using:
-
-flutter test
-
-Contributions
-
-Contributions are welcome! Please open an issue or submit a pull request on GitHub.
-
-License
-
-MIT License
+Updated to support Flutter version >=3.0.0 and Dart version >=3.4.4 <4.0.0.

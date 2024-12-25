@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:code_formatter_package/code_formatter_package.dart';
+import 'package:code_formatter_package/code_formatter_package.dart'; // Make sure to import your formatter package
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -24,8 +24,9 @@ void main() {
   ''';
 
   // Test case for formatting large code
-  test('formats large code into multiple widgets', () {
-    CodeFormatter.formatCode(largeCode);
+  test('formats large code into multiple widgets', () async {
+    // Call the formatCode method
+    CodeFormatter.formatCode(largeCode, outputDir: 'lib/generated_widgets');
 
     // Verify files are created in the correct directory
     for (int i = 1; i <= 2; i++) {
